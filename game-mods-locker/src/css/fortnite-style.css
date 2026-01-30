@@ -1,0 +1,555 @@
+/* Fortnite-specific styles */
+:root {
+    --primary-color: #5c16c5; /* Fortnite purple */
+    --secondary-color: #1ea1f2; /* Fortnite blue */
+    --accent-color: #ff8900; /* Fortnite orange */
+    --dark-bg: #0f1631;
+    --light-bg: #f1f1f1;
+    --text-dark: #222;
+    --text-light: #fff;
+    --card-bg: #fff;
+    --success-color: #43a047;
+}
+
+body {
+    color: var(--text-dark);
+    background-color: var(--light-bg);
+}
+
+a {
+    color: var(--secondary-color);
+}
+
+a:hover {
+    color: var(--primary-color);
+}
+
+.section-title {
+    color: var(--primary-color);
+}
+
+.section-title::after {
+    background-color: var(--accent-color);
+}
+
+/* Header styles */
+header {
+    background-color: var(--dark-bg);
+    padding: 1rem 0;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.logo h1 {
+    color: var(--text-light);
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 1.5rem;
+}
+
+nav ul li a {
+    color: var(--text-light);
+    font-weight: 600;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+/* Hero section */
+.hero {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-light);
+    padding: 4rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACCklEQVR4nO2ZzU/UQBTH+wdwvECCRtSDhIMxXmBFifESj0A4qRcuQJSLhAUTD4YLJmL8A0zig3jxZAhHb0YgaERZQ4zuwYtnxRgPGg8mhrbZGd5sGXe7XdrptJPtS35J02Vf5/ebN7+ZTVVVJYpkYD1wCigAZaAGfAZ+Ajc5JBk2gOs6iB0Ou0OSoT7EJnDIm7JTbYeygBfAR9lnHxgB+jxNQVomViFlp1Ir8BNYBk4Ag1L7nDu+5WLiKXAD2G9xL0qvKVPbRuS1lJ0FpuS1EdlvoEPtZwqYBZa0mwC5GNmoOxBb9qmUXZKyb4C0Q3lfJXBayq4BP2QsZ2fWQDKZRPbNUYP9mzkCDGhxZ+KwQwyyULzSDzxywcR94ADwRcrlsqIgQ8BL4F1EEz+0mMiXlJtWEGTKIgM9AXKaQeAucC0kiV/AJSnj5+M3DUG+yuczwJRNqR4FeoxuK1mUsmGQ1YAkyvJZ76B3pWxLIBUgA5w0bDZw4V4GxmSTqAV/Bh7LZhGU8VIGpgMOLT0+t3LRz0dQvvPRw3VnDBlccfVnbMlI4eRvvPTLpwzcAt4GZOSe14dfbFRLWvMsAu1BSbQDi6bdXLZaJHHQjUe5BZOoGp5Qg7Yj2o7uadfBnLNMpCnDFOp/YSgJsH5MmEBUjxBVYSjVL4VlJ9nDmF0MNAjwGxTFxzBJoTWCAAAAAElFTkSuQmCC');
+    opacity: 0.1;
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.hero-content {
+    flex: 1;
+    z-index: 1;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: center;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.3);
+    letter-spacing: 1px;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat i {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.stat span {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.download-btn {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.download-btn:hover {
+    background-color: #ff9d1e;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Featured Mods Section */
+.featured-mods {
+    padding: 4rem 0;
+    background-color: white;
+}
+
+.mods-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.mod-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.mod-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+    border-color: var(--accent-color);
+}
+
+.mod-image {
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+}
+
+.mod-image::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
+}
+
+.mod-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.mod-card:hover .mod-image img {
+    transform: scale(1.1);
+}
+
+.mod-content {
+    padding: 1.5rem;
+}
+
+.mod-content h3 {
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.mod-content p {
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.mod-meta {
+    display: flex;
+    justify-content: space-between;
+    color: #78909c;
+    font-size: 0.9rem;
+}
+
+.mod-meta i {
+    margin-right: 5px;
+}
+
+.view-more {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.view-more p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.secondary-btn {
+    background-color: var(--secondary-color);
+}
+
+.secondary-btn:hover {
+    background-color: #1894e4;
+}
+
+/* How It Works Section */
+.how-it-works {
+    padding: 4rem 0;
+    background-color: var(--light-bg);
+}
+
+.steps {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.step {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    border-top: 3px solid var(--primary-color);
+}
+
+.step-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.step h3 {
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.compatibility {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.compatibility h3 {
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.compatibility-icons {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.compat-icon {
+    text-align: center;
+}
+
+.compat-icon img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0.5rem;
+}
+
+.compat-icon span {
+    display: block;
+    font-size: 0.9rem;
+    color: #555;
+    font-weight: 600;
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 4rem 0;
+    background-color: white;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.testimonial {
+    background-color: var(--light-bg);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    border-left: 3px solid var(--primary-color);
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.testimonial-header img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 1rem;
+    object-fit: cover;
+    border: 2px solid var(--primary-color);
+}
+
+.testimonial-header h4 {
+    margin-bottom: 0.25rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.stars {
+    color: #ffc107;
+}
+
+.cta-box {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    color: white;
+    box-shadow: var(--shadow);
+}
+
+.cta-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.cta-box p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+/* FAQ Section */
+.faq {
+    padding: 4rem 0;
+    background-color: var(--light-bg);
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.faq-item {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    border-top: 3px solid var(--accent-color);
+}
+
+.faq-item h3 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.faq-item h3 i {
+    margin-right: 0.75rem;
+    color: var(--secondary-color);
+}
+
+.faq-item p {
+    color: #555;
+}
+
+/* Fortnite-specific footer styles */
+footer .footer-links h4,
+footer .footer-contact h4 {
+    color: var(--accent-color);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero .container {
+        flex-direction: column;
+    }
+
+    .hero-image {
+        order: -1;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .steps {
+        flex-direction: column;
+    }
+
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav ul li {
+        margin: 0 1rem 0.5rem 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero h2 {
+        font-size: 1.25rem;
+    }
+
+    .hero-stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .download-btn {
+        width: 100%;
+    }
+}

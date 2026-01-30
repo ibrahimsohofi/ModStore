@@ -1,0 +1,859 @@
+import spotifyIcon from '../assets/icons/spotify.png';
+import netflixIcon from '../assets/icons/netflix.png';
+import youtubeIcon from '../assets/icons/youtube.png';
+import instagramIcon from '../assets/icons/instagram.png';
+import tiktokIcon from '../assets/icons/tiktok.png';
+import minecraftIcon from '../assets/icons/minecraft.png';
+import canvaIcon from '../assets/icons/canva.png';
+import pubgIcon from '../assets/icons/pubg.png';
+import baseball9Icon from '../assets/icons/baseball9.png';
+import snaptubeIcon from '../assets/icons/snaptube.png';
+import codIcon from '../assets/icons/cod.png';
+import asphalt9Icon from '../assets/icons/asphalt9.png';
+
+export interface App {
+  id: string;
+  name: string;
+  icon: string;
+  description: string;
+  longDescription: string;
+  version: string;
+  size: string;
+  developer: string;
+  category: string;
+  subcategory?: string; // Added for more specific categorization
+  features: string[];
+  screenshots: string[];
+  downloads: number;
+  rating: number;
+  reviews: Review[];
+  downloadLinks?: DownloadLink[];
+  verified?: boolean; // Whether the mod has been verified as working
+  lastUpdated?: string; // Date when the app was last updated
+  changeLog?: string[]; // What changed in the latest update
+  modType?: ModType[]; // Types of modifications applied
+  safetyRating?: number; // Safety rating from 1-5
+  requirements?: string; // Minimum Android version required
+  workingOn?: string[]; // Devices confirmed working on
+}
+
+export enum ModType {
+  PREMIUM_UNLOCKED = "Premium Unlocked",
+  UNLIMITED_MONEY = "Unlimited Money",
+  AD_FREE = "Ad-Free",
+  UNLIMITED_GEMS = "Unlimited Gems",
+  GOD_MODE = "God Mode",
+  HIGH_DAMAGE = "High Damage",
+  UNLOCKED_LEVELS = "Unlocked Levels",
+  CUSTOM_SKINS = "Custom Skins",
+  SPEED_HACK = "Speed Hack",
+  NO_VERIFICATION = "No Verification Required"
+}
+
+export interface Review {
+  id: string;
+  name: string;
+  rating: number;
+  comment: string;
+  date: string;
+}
+
+export interface DownloadLink {
+  name: string;
+  url: string;
+  server: string;
+  speed: string;
+}
+
+export const MODDED_APPS: App[] = [
+  {
+    id: 'spotify-premium',
+    name: 'Spotify Premium Mod',
+    icon: spotifyIcon,
+    description: 'Enjoy Spotify Premium features without a subscription. No ads, unlimited skips, high quality audio, and more!',
+    longDescription: 'This modded version of Spotify gives you premium features without requiring a paid subscription. Enjoy ad-free music streaming, unlimited skips, on-demand playback, extreme audio quality, and offline downloads. Stay in control of your music experience with this enhanced version.',
+    version: '9.0.30.242',
+    size: '45 MB',
+    developer: 'ModdedStore Team',
+    category: 'Music',
+    subcategory: 'Streaming',
+    features: [
+      'Ad-free listening experience',
+      'Unlimited skips',
+      'High-quality audio',
+      'Download for offline listening',
+      'No premium subscription needed',
+      'Background play',
+      'Custom equalizer settings'
+    ],
+    screenshots: [
+      '/images/spotify/spotify1.jpg',
+      '/images/spotify/spotify2.jpg',
+      '/images/spotify/spotify3.jpg'
+    ],
+    downloads: 547829,
+    rating: 4.8,
+    reviews: [
+      {
+        id: 'sp-r1',
+        name: 'Music Lover',
+        rating: 5,
+        comment: 'Works perfectly! No more ads and I can skip tracks whenever I want.',
+        date: '2025-03-15'
+      },
+      {
+        id: 'sp-r2',
+        name: 'Alex Johnson',
+        rating: 4,
+        comment: 'Great mod, but sometimes crashes when downloading too many songs at once.',
+        date: '2025-02-28'
+      }
+    ],
+    downloadLinks: [
+      {
+        name: 'Main Server',
+        url: 'https://spdn.poumod.com/Spotify-Premium-9.0.30.242.apk',
+        server: 'PouMod Server',
+        speed: 'Fast'
+      },
+      {
+        name: 'Mirror 1',
+        url: 'https://s1.spiderdown.com/Spotify/Spotify-Premium-9.0.30.242.apk',
+        server: 'SpiderDown CDN',
+        speed: 'High Speed'
+      }
+    ],
+    verified: true,
+    lastUpdated: '2025-04-01',
+    changeLog: [
+      'Updated to the latest Spotify base version',
+      'Fixed login issues on some devices',
+      'Improved ad-blocking algorithm',
+      'Fixed crashing on Android 14'
+    ],
+    modType: [ModType.PREMIUM_UNLOCKED, ModType.AD_FREE],
+    safetyRating: 5,
+    requirements: 'Android 8.0+',
+    workingOn: ['Samsung', 'Pixel', 'OnePlus', 'Xiaomi']
+  },
+  {
+    id: 'netflix-premium',
+    name: 'Netflix Premium Mod',
+    icon: netflixIcon,
+    description: 'Watch Netflix content in HD/UHD quality without subscription fees. Unlock all premium features!',
+    longDescription: 'This modded version of Netflix allows users to access premium content without a paid subscription. Enjoy HD and UHD streaming quality, download movies and series for offline viewing, and access region-locked content. The mod removes subscription verification and provides an ad-free experience.',
+    version: '8.73.0',
+    size: '58 MB',
+    developer: 'ModdedStore Team',
+    category: 'Entertainment',
+    subcategory: 'Streaming',
+    features: [
+      'Full access to Netflix content library',
+      'HD/UHD streaming quality',
+      'Download content for offline viewing',
+      'No subscription required',
+      'Region-lock bypass',
+      'Ad-free experience',
+      'Multiple profiles support'
+    ],
+    screenshots: [
+      '/images/netflix/netflix1.jpg',
+      '/images/netflix/netflix2.jpg',
+      '/images/netflix/netflix3.jpg'
+    ],
+    downloads: 842156,
+    rating: 4.7,
+    reviews: [
+      {
+        id: 'nf-r1',
+        name: 'StreamingKing',
+        rating: 5,
+        comment: 'Amazing! I can watch everything in 4K now without paying for the premium plan!',
+        date: '2025-04-02'
+      },
+      {
+        id: 'nf-r2',
+        name: 'Sarah Smith',
+        rating: 4,
+        comment: 'Works great, but some very new releases still show as premium only.',
+        date: '2025-03-21'
+      }
+    ],
+    downloadLinks: [
+      {
+        name: 'Premium Server',
+        url: 'https://spdn.poumod.com/Netflix-Premium-8.73.0.apk',
+        server: 'PouMod Server',
+        speed: 'Fast'
+      },
+      {
+        name: 'Mirror 1',
+        url: 'https://s1.spiderdown.com/Netflix/Netflix-Premium-8.73.0.apk',
+        server: 'SpiderDown CDN',
+        speed: 'High Speed'
+      }
+    ],
+    verified: true,
+    lastUpdated: '2025-03-28',
+    changeLog: [
+      'Updated to latest Netflix base version',
+      'Added support for Dolby Atmos audio',
+      'Fixed crashing on startup for some devices',
+      'Improved HDR support'
+    ],
+    modType: [ModType.PREMIUM_UNLOCKED, ModType.NO_VERIFICATION],
+    safetyRating: 4,
+    requirements: 'Android 9.0+',
+    workingOn: ['Samsung', 'Pixel', 'OnePlus', 'Xiaomi', 'Oppo']
+  },
+  {
+    id: 'youtube-premium',
+    name: 'YouTube Premium Mod',
+    icon: youtubeIcon,
+    description: 'Enjoy YouTube without ads, background play, and download videos directly. No premium subscription needed!',
+    longDescription: 'This modded version of YouTube provides all the premium features without requiring a premium subscription. Enjoy ad-free video watching, background playback when your screen is off, picture-in-picture mode, and the ability to download videos directly within the app. The mod also includes enhanced video quality options and additional customization features.',
+    version: '18.36.45',
+    size: '52 MB',
+    developer: 'ModdedStore Team',
+    category: 'Entertainment',
+    features: [
+      'Ad-free video watching',
+      'Background playback',
+      'Video downloads',
+      'Picture-in-picture mode',
+      'HD/4K quality selection',
+      'No premium subscription needed',
+      'Enhanced UI customization'
+    ],
+    screenshots: [
+      '/images/youtube/youtube1.jpg',
+      '/images/youtube/youtube2.jpg',
+      '/images/youtube/youtube3.jpg'
+    ],
+    downloads: 1245790,
+    rating: 4.9,
+    reviews: [
+      {
+        id: 'yt-r1',
+        name: 'Tech Enthusiast',
+        rating: 5,
+        comment: 'Finally no more ads! Background play works flawlessly even with screen off.',
+        date: '2025-04-10'
+      },
+      {
+        id: 'yt-r2',
+        name: 'Video Creator',
+        rating: 5,
+        comment: 'The download feature is amazing! I can watch tutorials offline anytime.',
+        date: '2025-03-30'
+      }
+    ],
+    downloadLinks: [
+      {
+        name: 'Fast Server',
+        url: 'https://spdn.poumod.com/YouTube-Premium-18.36.45.apk',
+        server: 'PouMod Server',
+        speed: 'Fast'
+      },
+      {
+        name: 'Mirror 1',
+        url: 'https://s1.spiderdown.com/YouTube/YouTube-Premium-18.36.45.apk',
+        server: 'SpiderDown CDN',
+        speed: 'High Speed'
+      }
+    ]
+  },
+  {
+    id: 'instagram-pro',
+    name: 'Instagram Pro',
+    icon: instagramIcon,
+    description: 'Enhanced Instagram with photo/video downloads, story viewing without notification, and ad blocking.',
+    longDescription: 'This modded version of Instagram adds powerful features not available in the official app. Download any photos and videos with a simple tap, view stories anonymously without the poster knowing, hide your online status, and enjoy an ad-free experience. The mod also includes enhanced image upload quality, custom themes, and privacy features.',
+    version: '290.0.0.16',
+    size: '38 MB',
+    developer: 'ModdedStore Team',
+    category: 'Social',
+    features: [
+      'Download photos and videos',
+      'View stories anonymously',
+      'Hidden online status',
+      'Ad-free experience',
+      'Enhanced upload quality',
+      'Custom themes',
+      'Privacy features'
+    ],
+    screenshots: [
+      '/images/instagram/instagram1.jpg',
+      '/images/instagram/instagram2.jpg',
+      '/images/instagram/instagram1.jpg'
+    ],
+    downloads: 926473,
+    rating: 4.7,
+    reviews: [
+      {
+        id: 'ig-r1',
+        name: 'Social Media Expert',
+        rating: 5,
+        comment: 'The anonymous story viewing is a game-changer! No more accidentally tapping on stories.',
+        date: '2025-04-05'
+      },
+      {
+        id: 'ig-r2',
+        name: 'Photo Enthusiast',
+        rating: 4,
+        comment: 'Love the download feature, but wish it had batch download for multiple photos.',
+        date: '2025-03-25'
+      }
+    ],
+    downloadLinks: [
+      {
+        name: 'Primary Server',
+        url: 'https://spdn.poumod.com/Instagram-Pro-290.0.0.16.apk',
+        server: 'PouMod Server',
+        speed: 'Fast'
+      },
+      {
+        name: 'Mirror 1',
+        url: 'https://s1.spiderdown.com/Instagram/Instagram-Pro-290.0.0.16.apk',
+        server: 'SpiderDown CDN',
+        speed: 'High Speed'
+      }
+    ]
+  },
+  {
+    id: 'tiktok-plus',
+    name: 'TikTok Plus',
+    icon: tiktokIcon,
+    description: 'Enhanced TikTok with video downloading, no watermarks, and ad-free browsing experience.',
+    longDescription: 'This modded version of TikTok enhances your experience with powerful features. Download any TikTok video without watermarks in high quality with a single tap. Browse without annoying ads, unlock region-restricted content, and enjoy enhanced privacy features. The mod also includes the ability to use premium effects without restrictions.',
+    version: '31.2.4',
+    size: '42 MB',
+    developer: 'ModdedStore Team',
+    category: 'Social',
+    features: [
+      'Watermark-free video downloads',
+      'Ad-free browsing',
+      'Region restriction bypass',
+      'Enhanced privacy options',
+      'Unlimited access to premium effects',
+      'Auto-repeat video option',
+      'Advanced video sharing'
+    ],
+    screenshots: [
+      '/images/tiktok/tiktok1.jpg',
+      '/images/tiktok/tiktok2.jpg',
+      '/images/tiktok/tiktok3.jpg'
+    ],
+    downloads: 763928,
+    rating: 4.8,
+    reviews: [
+      {
+        id: 'tt-r1',
+        name: 'Content Creator',
+        rating: 5,
+        comment: 'The watermark-free download is perfect for reusing content on other platforms!',
+        date: '2025-04-08'
+      },
+      {
+        id: 'tt-r2',
+        name: 'TikTok Addict',
+        rating: 5,
+        comment: 'I love that I can save videos easily and the ad-free experience is amazing.',
+        date: '2025-03-29'
+      }
+    ],
+    downloadLinks: [
+      {
+        name: 'Main Server',
+        url: 'https://spdn.poumod.com/TikTok-Plus-31.2.4.apk',
+        server: 'PouMod Server',
+        speed: 'Fast'
+      },
+      {
+        name: 'Mirror 1',
+        url: 'https://s1.spiderdown.com/TikTok/TikTok-Plus-31.2.4.apk',
+        server: 'SpiderDown CDN',
+        speed: 'High Speed'
+      },
+      {
+        name: 'Mirror 2',
+        url: 'https://dl.happymod.com/TikTok/TikTok-Plus-31.2.4.apk',
+        server: 'HappyMod',
+        speed: 'Medium'
+      }
+    ]
+  },
+  {
+    id: 'minecraft-pe-mod',
+    name: 'Minecraft PE Ultimate',
+    icon: minecraftIcon,
+    description: 'Minecraft Pocket Edition with unlocked premium features, infinite resources, and skins.',
+    longDescription: 'This modded version of Minecraft Pocket Edition offers the complete premium experience with all features unlocked. Enjoy unlimited resources, the full catalog of skins and texture packs, all premium items, and custom servers access. The mod also includes performance improvements, additional game modes, and exclusive features not available in the official version.',
+    version: '1.20.51',
+    size: '185 MB',
+    developer: 'ModdedStore Team',
+    category: 'Games',
+    features: [
+      'All premium features unlocked',
+      'Unlimited resources and items',
+      'Full skin and texture pack catalog',
+      'Custom server access',
+      'Performance improvements',
+      'Additional game modes',
+      'Exclusive mod features'
+    ],
+    screenshots: [
+      '/images/minecraft/minecraft1.jpg',
+      '/images/minecraft/minecraft2.jpg',
+      '/images/minecraft/minecraft3.jpg'
+    ],
+    downloads: 1539204,
+    rating: 4.9,
+    reviews: [
+      {
+        id: 'mc-r1',
+        name: 'Builder Pro',
+        rating: 5,
+        comment: 'Amazing mod! Having access to all the premium features and skins has totally transformed my gameplay.',
+        date: '2025-04-12'
+      },
+      {
+        id: 'mc-r2',
+        name: 'Gamer Kid',
+        rating: 5,
+        comment: 'The unlimited resources make creative mode so much more fun! No more restrictions!',
+        date: '2025-04-01'
+      }
+    ],
+    downloadLinks: [
+      {
+        name: 'Fast Server',
+        url: 'https://spdn.poumod.com/Minecraft-PE-Ultimate-1.20.51.apk',
+        server: 'PouMod Server',
+        speed: 'Fast'
+      },
+      {
+        name: 'Mirror 1',
+        url: 'https://s1.spiderdown.com/Minecraft/Minecraft-PE-Ultimate-1.20.51.apk',
+        server: 'SpiderDown CDN',
+        speed: 'High Speed'
+      },
+      {
+        name: 'Mirror 2',
+        url: 'https://dl.happymod.com/Games/Minecraft-PE-Ultimate-1.20.51.apk',
+        server: 'HappyMod',
+        speed: 'Medium'
+      }
+    ]
+  },
+  {
+    id: 'canva-pro',
+    name: 'Canva Pro Unlocked',
+    icon: canvaIcon,
+    description: 'Full Canva Pro features unlocked: premium templates, elements, fonts, and unlimited downloads.',
+    longDescription: 'This modded version of Canva unlocks all Pro features without requiring a subscription. Access the full library of premium templates, elements, photos, and fonts. Enjoy unlimited downloads, transparent background exports, and team collaboration features. The mod also removes watermarks from premium content and provides full access to all Pro design tools.',
+    version: '2.207.0',
+    size: '60 MB',
+    developer: 'ModdedStore Team',
+    category: 'Productivity',
+    features: [
+      'All premium templates unlocked',
+      'Full access to Pro elements and photos',
+      'Premium fonts library',
+      'Transparent background export',
+      'No watermarks',
+      'Team collaboration features',
+      'Unlimited downloads'
+    ],
+    screenshots: [
+      '/images/canva/canva1.jpg',
+      '/images/canva/canva2.jpg',
+      '/images/canva/canva3.jpg'
+    ],
+    downloads: 689320,
+    rating: 4.8,
+    reviews: [
+      {
+        id: 'cv-r1',
+        name: 'Graphic Designer',
+        rating: 5,
+        comment: 'As a freelancer, this mod has been a lifesaver. All Pro features without the subscription cost!',
+        date: '2025-04-09'
+      },
+      {
+        id: 'cv-r2',
+        name: 'Small Business Owner',
+        rating: 4,
+        comment: 'The premium templates and elements make my marketing materials look professional!',
+        date: '2025-03-27'
+      }
+    ],
+    downloadLinks: [
+      {
+        name: 'Primary Server',
+        url: 'https://spdn.poumod.com/Canva-Pro-2.207.0.apk',
+        server: 'PouMod Server',
+        speed: 'Fast'
+      },
+      {
+        name: 'Mirror 1',
+        url: 'https://s1.spiderdown.com/Canva/Canva-Pro-2.207.0.apk',
+        server: 'SpiderDown CDN',
+        speed: 'High Speed'
+      }
+    ]
+  },
+  {
+    id: 'snaptube-vip',
+    name: 'SnapTube VIP',
+    icon: snaptubeIcon,
+    description: 'Download videos and music from YouTube, Facebook, Instagram and other social platforms in high quality.',
+    longDescription: 'SnapTube VIP is a premium video and music downloader that allows you to save content from YouTube, Facebook, Instagram, TikTok, and over 1000 other websites. Download videos in various quality options including 4K, 1080p, 720p, and more. Convert videos to MP3 with one click and organize your downloads in a user-friendly interface. The VIP version removes all ads and enables background downloading.',
+    version: '7.38.0.7385',
+    size: '32 MB',
+    developer: 'SnapTube Team',
+    category: 'Multimedia',
+    features: [
+      'Download videos from 1000+ websites',
+      'Multiple quality options (4K, 1080p, 720p)',
+      'MP3 converter built-in',
+      'Ad-free experience',
+      'Background downloading',
+      'Video and music organizer',
+      'Fast download speeds'
+    ],
+    screenshots: [
+      '/images/snaptube/snaptube1.jpg',
+      '/images/snaptube/snaptube2.jpg',
+      '/images/snaptube/snaptube3.jpg'
+    ],
+    downloads: 3492781,
+    rating: 4.8,
+    reviews: [
+      {
+        id: 'st-r1',
+        name: 'Music Collector',
+        rating: 5,
+        comment: 'The MP3 converter is amazing! I\'ve built my entire music library with this app.',
+        date: '2025-04-18'
+      },
+      {
+        id: 'st-r2',
+        name: 'Video Creator',
+        rating: 4,
+        comment: 'Great for downloading reference videos and inspiration for my own content.',
+        date: '2025-04-10'
+      }
+    ],
+    downloadLinks: [
+      {
+        name: 'Fast Server',
+        url: 'https://s1.spiderdown.com/SnapTube/Snaptube%20v7.38.0.73850210%20%28ViP%29.apk',
+        server: 'SpiderDown CDN',
+        speed: 'High Speed'
+      },
+      {
+        name: 'Mirror 1',
+        url: 'https://spdn.poumod.com/Snaptube-VIP-7.38.0.7385.apk',
+        server: 'PouMod Server',
+        speed: 'Fast'
+      },
+      {
+        name: 'Mirror 2',
+        url: 'https://dl.liteapks.com/app/Snaptube-VIP-7.38.0.7385.apk',
+        server: 'LiteAPKs',
+        speed: 'Medium'
+      }
+    ]
+  },
+  {
+    id: 'pubg-mobile-mod',
+    name: 'PUBG Mobile Hack',
+    icon: pubgIcon,
+    description: 'PUBG Mobile with anti-ban protection, wallhack, aimbot, and premium features unlocked.',
+    longDescription: 'This modded version of PUBG Mobile includes advanced features to enhance your gameplay. Experience the game with wallhack to see enemies through walls, aimbot for precise shooting, unlimited UC (Unknown Cash), and anti-ban protection to keep your account safe. The mod also provides no-recoil, increased movement speed, and premium cosmetics unlocked without spending money.',
+    version: '2.9.0',
+    size: '1.2 GB',
+    developer: 'ModdedStore Team',
+    category: 'Games',
+    subcategory: 'Action',
+    features: [
+      'Wallhack (see enemies through walls)',
+      'Aimbot for accurate shooting',
+      'Anti-ban protection',
+      'Unlimited UC (in-game currency)',
+      'No recoil and increased accuracy',
+      'Speed boost for faster movement',
+      'Premium skins and cosmetics unlocked'
+    ],
+    screenshots: [
+      '/images/pubg/pubg1.jpg',
+      '/images/pubg/pubg2.jpg',
+      '/images/pubg/pubg3.jpg'
+    ],
+    downloads: 2845961,
+    rating: 4.7,
+    reviews: [
+      {
+        id: 'pm-r1',
+        name: 'ProGamer123',
+        rating: 5,
+        comment: 'The wallhack feature is incredible! I can see all enemies and dominate every match.',
+        date: '2025-04-20'
+      },
+      {
+        id: 'pm-r2',
+        name: 'BattleRoyaleKing',
+        rating: 4,
+        comment: 'Great mod but be careful with the aimbot in spectator mode to avoid reports.',
+        date: '2025-04-15'
+      }
+    ],
+    downloadLinks: [
+      {
+        name: 'Premium Server',
+        url: 'https://spdn.poumod.com/PUBG-Mobile-Hack-2.9.0.apk',
+        server: 'PouMod Server',
+        speed: 'Fast'
+      },
+      {
+        name: 'Mirror 1',
+        url: 'https://s1.spiderdown.com/PUBG/PUBG-Mobile-Hack-2.9.0.apk',
+        server: 'SpiderDown CDN',
+        speed: 'High Speed'
+      },
+      {
+        name: 'Mirror 2',
+        url: 'https://dl.happymod.com/Games/PUBG-Mobile-Hack-2.9.0.apk',
+        server: 'HappyMod',
+        speed: 'Medium'
+      }
+    ],
+    verified: true,
+    lastUpdated: '2025-04-18',
+    changeLog: [
+      'Updated to match latest game version',
+      'Improved anti-ban features',
+      'Fixed wallhack detection issues',
+      'Added more premium skins',
+      'Enhanced aimbot targeting'
+    ],
+    modType: [ModType.GOD_MODE, ModType.UNLIMITED_MONEY, ModType.PREMIUM_UNLOCKED, ModType.HIGH_DAMAGE, ModType.SPEED_HACK],
+    safetyRating: 3,
+    requirements: 'Android 10.0+, 4GB RAM',
+    workingOn: ['High-end phones only', 'Samsung S series', 'OnePlus', 'Xiaomi Mi series']
+  },
+  {
+    id: 'baseball9-unlimited',
+    name: 'Baseball 9 Unlimited',
+    icon: baseball9Icon,
+    description: 'Baseball 9 with unlimited gems, stars, and all premium features unlocked.',
+    longDescription: 'This modded version of Baseball 9 gives you unlimited resources and unlocks all premium features. Enjoy unlimited gems, stars, and points to build your ultimate baseball team. Buy the best players, upgrade all stats to maximum, and dominate in every tournament. The mod includes all premium stadiums, uniforms, and equipment unlocked, plus enhanced gameplay features and no ads.',
+    version: '1.9.8',
+    size: '98 MB',
+    developer: 'ModdedStore Team',
+    category: 'Games',
+    features: [
+      'Unlimited gems and stars',
+      'All player stats can be maxed out',
+      'All premium uniforms unlocked',
+      'All stadiums available',
+      'Premium equipment unlocked',
+      'No advertising',
+      'Fast game progression'
+    ],
+    screenshots: [
+      '/images/baseball9/baseball9_1.jpg',
+      '/images/baseball9/baseball9_2.jpg',
+      '/images/baseball9/baseball9_3.jpg'
+    ],
+    downloads: 1245780,
+    rating: 4.9,
+    reviews: [
+      {
+        id: 'bb9-r1',
+        name: 'Baseball Fan',
+        rating: 5,
+        comment: 'This mod is amazing! I can finally have all the premium players and uniforms without spending a fortune!',
+        date: '2025-04-15'
+      },
+      {
+        id: 'bb9-r2',
+        name: 'Sports Gamer',
+        rating: 5,
+        comment: 'The unlimited gems make the game so much more enjoyable. No more grinding for resources!',
+        date: '2025-04-01'
+      }
+    ],
+    downloadLinks: [
+      {
+        name: 'Fast Server',
+        url: 'https://spdn.poumod.com/Baseball9-Unlimited-1.9.8.apk',
+        server: 'PouMod Server',
+        speed: 'Fast'
+      },
+      {
+        name: 'Mirror 1',
+        url: 'https://s1.spiderdown.com/Baseball9/Baseball9-Unlimited-1.9.8.apk',
+        server: 'SpiderDown CDN',
+        speed: 'High Speed'
+      },
+      {
+        name: 'Mirror 2',
+        url: 'https://dl.liteapks.com/app/Baseball9-Unlimited-1.9.8.apk',
+        server: 'LiteAPKs',
+        speed: 'Medium'
+      }
+    ]
+  },
+  {
+    id: 'cod-mobile-mod',
+    name: 'Call of Duty Mobile Mod',
+    icon: codIcon,
+    description: 'COD Mobile with aimbot, wallhack, unlimited CP, and anti-ban protection.',
+    longDescription: 'This modded version of Call of Duty: Mobile unlocks premium features and cheats such as aimbot, wallhack, unlimited CP (COD Points), and anti-ban protection. Dominate every match, unlock all skins and weapons, and enjoy a lag-free, ad-free experience. Perfect for players who want to take their gameplay to the next level.',
+    version: '1.0.41',
+    size: '2.4 GB',
+    developer: 'ModdedStore Team',
+    category: 'Games',
+    features: [
+      'Aimbot for perfect accuracy',
+      'Wallhack to see enemies through walls',
+      'Unlimited CP (COD Points)',
+      'All skins and weapons unlocked',
+      'Anti-ban protection',
+      'No ads',
+      'Lag-free gaming experience'
+    ],
+    screenshots: [
+      '/images/cod/cod1.jpg',
+      '/images/cod/cod2.jpg',
+      '/images/cod/cod3.jpg'
+    ],
+    downloads: 3124901,
+    rating: 4.8,
+    reviews: [
+      {
+        id: 'cod-r1',
+        name: 'ShooterPro',
+        rating: 5,
+        comment: 'Aimbot and wallhack work flawlessly! Unlocked all legendary skins.',
+        date: '2025-04-20'
+      },
+      {
+        id: 'cod-r2',
+        name: 'MobileGamer',
+        rating: 4,
+        comment: 'Great for fun, but use anti-ban features to avoid getting flagged.',
+        date: '2025-04-12'
+      }
+    ],
+    downloadLinks: [
+      {
+        name: 'Main Server',
+        url: 'https://spdn.poumod.com/COD-Mobile-Mod-1.0.41.apk',
+        server: 'PouMod Server',
+        speed: 'Fast'
+      },
+      {
+        name: 'Mirror 1',
+        url: 'https://s1.spiderdown.com/CODMobile/COD-Mobile-Mod-1.0.41.apk',
+        server: 'SpiderDown CDN',
+        speed: 'High Speed'
+      }
+    ]
+  },
+  {
+    id: 'asphalt9-legends-mod',
+    name: 'Asphalt 9 Legends Mod',
+    icon: asphalt9Icon,
+    description: 'Asphalt 9 with unlimited money, unlocked cars, and premium features.',
+    longDescription: 'This modded version of Asphalt 9: Legends gives you unlimited money, all cars unlocked, and access to premium features. Upgrade your cars to the max, race with exclusive vehicles, and enjoy an ad-free, enhanced racing experience. Compete in multiplayer without restrictions and climb the leaderboards with ease.',
+    version: '4.2.0',
+    size: '2.1 GB',
+    developer: 'ModdedStore Team',
+    category: 'Games',
+    features: [
+      'Unlimited money and tokens',
+      'All cars unlocked',
+      'Max upgrades for all vehicles',
+      'Ad-free racing experience',
+      'Premium events unlocked',
+      'Multiplayer without restrictions',
+      'Enhanced graphics and performance'
+    ],
+    screenshots: [
+      '/images/asphalt9/asphalt1.jpg',
+      '/images/asphalt9/asphalt2.jpg',
+      '/images/asphalt9/asphalt3.jpg'
+    ],
+    downloads: 2150493,
+    rating: 4.9,
+    reviews: [
+      {
+        id: 'a9-r1',
+        name: 'SpeedRacer',
+        rating: 5,
+        comment: 'Unlocked all cars and max upgrades instantly! Best racing mod out there.',
+        date: '2025-04-19'
+      },
+      {
+        id: 'a9-r2',
+        name: 'Car Collector',
+        rating: 5,
+        comment: 'Unlimited money lets me try every car in the game. Love the graphics!',
+        date: '2025-04-10'
+      }
+    ],
+    downloadLinks: [
+      {
+        name: 'Primary Server',
+        url: 'https://spdn.poumod.com/Asphalt9-Legends-Mod-4.2.0.apk',
+        server: 'PouMod Server',
+        speed: 'Fast'
+      },
+      {
+        name: 'Mirror 1',
+        url: 'https://s1.spiderdown.com/Asphalt9/Asphalt9-Legends-Mod-4.2.0.apk',
+        server: 'SpiderDown CDN',
+        speed: 'High Speed'
+      }
+    ]
+  }
+];
+
+export const getAppById = (id: string): App | undefined => {
+  return MODDED_APPS.find(app => app.id === id);
+};
+
+export const getVerifiedApps = (): App[] => {
+  return MODDED_APPS.filter(app => app.verified === true);
+};
+
+export const getRecentlyUpdatedApps = (limit = 6): App[] => {
+  return [...MODDED_APPS]
+    .filter(app => app.lastUpdated)
+    .sort((a, b) => {
+      const dateA = a.lastUpdated ? new Date(a.lastUpdated).getTime() : 0;
+      const dateB = b.lastUpdated ? new Date(b.lastUpdated).getTime() : 0;
+      return dateB - dateA;
+    })
+    .slice(0, limit);
+};
+
+export const getAppsByCategory = (category: string, limit?: number): App[] => {
+  const filteredApps = MODDED_APPS.filter(app =>
+    app.category.toLowerCase() === category.toLowerCase() ||
+    (app.subcategory && app.subcategory.toLowerCase() === category.toLowerCase())
+  );
+
+  return limit ? filteredApps.slice(0, limit) : filteredApps;
+};
+
+export const getAppsByModType = (modType: ModType, limit?: number): App[] => {
+  const filteredApps = MODDED_APPS.filter(app =>
+    Array.isArray(app.modType) && app.modType.includes(modType)
+  );
+
+  return limit ? filteredApps.slice(0, limit) : filteredApps;
+};

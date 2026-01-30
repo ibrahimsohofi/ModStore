@@ -1,0 +1,91 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <!-- Backdrop with gradient and glowing effect -->
+  <defs>
+    <linearGradient id="backgroundGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#240054" />
+      <stop offset="50%" stop-color="#3D0F77" />
+      <stop offset="100%" stop-color="#5A189A" />
+    </linearGradient>
+
+    <linearGradient id="innerCircleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6C21BE" />
+      <stop offset="100%" stop-color="#9D4EDD" />
+    </linearGradient>
+
+    <linearGradient id="modGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C77DFF" />
+      <stop offset="100%" stop-color="#E0AAFF" />
+    </linearGradient>
+
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
+      <feComposite in="blur" in2="SourceGraphic" operator="over" />
+    </filter>
+
+    <filter id="innerShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feOffset dx="0" dy="2" />
+      <feGaussianBlur stdDeviation="2" result="blurOut" />
+      <feComposite in="SourceGraphic" in2="blurOut" operator="over" />
+    </filter>
+
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#240054" flood-opacity="0.5" />
+    </filter>
+  </defs>
+
+  <!-- App icon style rounded square background -->
+  <rect width="256" height="256" rx="60" fill="url(#backgroundGradient)" filter="url(#glow)" />
+
+  <!-- Digital circuit lines representing mod/code -->
+  <g stroke="#C77DFF" stroke-width="1.5" opacity="0.7">
+    <path d="M68,128 H88 M88,128 V148 H108 M108,148 V168" fill="none" />
+    <path d="M188,128 H168 M168,128 V148 H148 M148,148 V168" fill="none" />
+    <path d="M88,108 H108 M108,108 V88 H128" fill="none" />
+    <path d="M168,108 H148 M148,108 V88 H128" fill="none" />
+  </g>
+
+  <!-- Central MOD element with code brackets -->
+  <g filter="url(#softShadow)">
+    <!-- Hexagon base with glowing effect -->
+    <path d="M128,78 L188,108 L188,168 L128,198 L68,168 L68,108 Z" fill="#240054" opacity="0.85" />
+    <path d="M128,88 L178,113 L178,163 L128,188 L78,163 L78,113 Z" fill="#3D0F77" />
+
+    <!-- Code bracket left -->
+    <path d="M98,128 L108,138 L98,148" stroke="#C77DFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+
+    <!-- Code bracket right -->
+    <path d="M158,128 L148,138 L158,148" stroke="#C77DFF" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+
+    <!-- Connecting line -->
+    <line x1="108" y1="138" x2="148" y2="138" stroke="#E0AAFF" stroke-width="8" stroke-linecap="round" />
+
+    <!-- Down Arrow for downloads -->
+    <path d="M128,108 V128" stroke="url(#modGradient)" stroke-width="8" stroke-linecap="round" />
+    <path d="M118,118 L128,128 L138,118" stroke="url(#modGradient)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- Premium indicator stars -->
+  <g fill="#FFD700">
+    <circle cx="78" cy="93" r="3" />
+    <circle cx="178" cy="93" r="3" />
+    <circle cx="88" cy="178" r="3" />
+    <circle cx="168" cy="178" r="3" />
+  </g>
+
+  <!-- Glowing particles around for dynamic effect -->
+  <g fill="#E0AAFF">
+    <circle cx="68" cy="138" r="2" opacity="0.8" />
+    <circle cx="78" cy="128" r="1.5" opacity="0.6" />
+    <circle cx="188" cy="138" r="2" opacity="0.8" />
+    <circle cx="178" cy="128" r="1.5" opacity="0.6" />
+    <circle cx="128" cy="68" r="2" opacity="0.8" />
+    <circle cx="118" cy="78" r="1.5" opacity="0.6" />
+    <circle cx="138" cy="78" r="1.5" opacity="0.6" />
+    <circle cx="128" cy="188" r="2" opacity="0.8" />
+    <circle cx="118" cy="178" r="1.5" opacity="0.6" />
+    <circle cx="138" cy="178" r="1.5" opacity="0.6" />
+  </g>
+
+  <!-- Subtle 'M' letter for ModStore -->
+  <path d="M103,202 L118,192 L128,198 L138,192 L153,202" stroke="#E0AAFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.8" />
+</svg>

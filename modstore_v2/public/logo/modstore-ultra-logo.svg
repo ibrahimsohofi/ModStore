@@ -1,0 +1,231 @@
+<svg width="600" height="600" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <!-- Main definitions -->
+  <defs>
+    <!-- Main gradients and filters -->
+    <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2D0A6E" />
+      <stop offset="45%" stop-color="#5A189A" />
+      <stop offset="100%" stop-color="#9D4EDD" />
+    </linearGradient>
+
+    <linearGradient id="innerGradient" x1="10%" y1="0%" x2="90%" y2="100%">
+      <stop offset="0%" stop-color="#7B2CBF" />
+      <stop offset="70%" stop-color="#5A189A" />
+      <stop offset="100%" stop-color="#3C096C" />
+    </linearGradient>
+
+    <linearGradient id="glowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C77DFF" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#E0AAFF" stop-opacity="0.7" />
+    </linearGradient>
+
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFD700" />
+      <stop offset="50%" stop-color="#FFDF00" />
+      <stop offset="100%" stop-color="#FFF5CC" />
+    </linearGradient>
+
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="#E0AAFF" stop-opacity="0.6" />
+      <stop offset="70%" stop-color="#7B2CBF" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#3C096C" stop-opacity="0" />
+    </radialGradient>
+
+    <filter id="dropShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="15" />
+      <feOffset dx="0" dy="10" result="offsetblur" />
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.5" />
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="neonGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+      <feComposite in="blur" in2="SourceGraphic" operator="over" />
+    </filter>
+
+    <filter id="textGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur" />
+      <feFlood flood-color="#C77DFF" flood-opacity="0.8" result="color" />
+      <feComposite in="color" in2="blur" operator="in" result="glow" />
+      <feMerge>
+        <feMergeNode in="glow" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- 3D Perspective effect pattern -->
+    <pattern id="gridPattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="40" height="40" fill="#240054" fill-opacity="0.05" />
+      <path d="M 40 0 L 0 0 0 40" stroke="#C77DFF" stroke-width="0.5" fill="none" stroke-opacity="0.2" />
+    </pattern>
+
+    <!-- Clipping paths -->
+    <clipPath id="hexClip">
+      <path d="M300,120 L480,220 L480,420 L300,520 L120,420 L120,220 Z" />
+    </clipPath>
+
+    <!-- Matrix effect pattern -->
+    <pattern id="matrixEffect" patternUnits="userSpaceOnUse" width="60" height="60" patternTransform="scale(0.5)">
+      <g fill="none" stroke="#C77DFF" stroke-width="0.7" opacity="0.3">
+        <text x="5" y="15" style="font: 10px monospace">01</text>
+        <text x="25" y="30" style="font: 10px monospace">10</text>
+        <text x="45" y="45" style="font: 10px monospace">01</text>
+        <text x="15" y="60" style="font: 10px monospace">10</text>
+      </g>
+    </pattern>
+  </defs>
+
+  <!-- Base layer - glowing background -->
+  <circle cx="300" cy="300" r="280" fill="url(#mainGradient)" filter="url(#neonGlow)" />
+
+  <!-- Perspective grid layer to create depth -->
+  <circle cx="300" cy="300" r="250" fill="url(#pattern(#gridPattern))" opacity="0.6" />
+
+  <!-- Digital matrix effect overlay -->
+  <circle cx="300" cy="300" r="240" fill="url(#matrixEffect)" opacity="0.5" />
+
+  <!-- Central radiating glow -->
+  <circle cx="300" cy="300" r="230" fill="url(#centerGlow)" />
+
+  <!-- Main 3D hexagon container with shadow -->
+  <g filter="url(#dropShadow)">
+    <!-- Base hexagon (back plate) -->
+    <path d="M300,140 L460,230 L460,410 L300,500 L140,410 L140,230 Z" fill="#1A0035" />
+
+    <!-- Hexagon sides to create 3D effect -->
+    <path d="M300,140 L140,230 L140,410 L300,500 L300,140 Z" fill="#120024" fill-opacity="0.7" />
+    <path d="M300,140 L460,230 L460,410 L300,500 L300,140 Z" fill="#3A0077" fill-opacity="0.5" />
+
+    <!-- Inner hexagon plate -->
+    <path d="M300,160 L440,240 L440,400 L300,480 L160,400 L160,240 Z" fill="url(#innerGradient)" />
+
+    <!-- Hexagon outline with glowing effect -->
+    <path d="M300,140 L460,230 L460,410 L300,500 L140,410 L140,230 Z" fill="none" stroke="url(#glowGradient)" stroke-width="3" filter="url(#neonGlow)" />
+  </g>
+
+  <!-- Inner content group with perspective effect -->
+  <g clip-path="url(#hexClip)">
+    <!-- Circuit board-like patterns for depth and tech feel -->
+    <g stroke="#7B2CBF" stroke-width="1.5" opacity="0.7">
+      <path d="M200,300 Q250,250 300,300 Q350,350 400,300" fill="none" />
+      <path d="M250,350 Q300,300 350,350" fill="none" />
+      <path d="M230,250 L270,250 L270,270 L310,270 L310,230" fill="none" />
+      <path d="M370,250 L330,250 L330,270 L290,270 L290,230" fill="none" />
+      <path d="M250,370 L290,370 L290,350 L330,350 L330,390" fill="none" />
+      <path d="M350,370 L310,370 L310,350 L270,350 L270,390" fill="none" />
+
+      <!-- Digital nodes -->
+      <circle cx="200" cy="300" r="5" fill="#C77DFF" opacity="0.8" />
+      <circle cx="250" cy="250" r="5" fill="#C77DFF" opacity="0.8" />
+      <circle cx="300" cy="300" r="8" fill="#FFD700" opacity="0.9" />
+      <circle cx="350" cy="350" r="5" fill="#C77DFF" opacity="0.8" />
+      <circle cx="400" cy="300" r="5" fill="#C77DFF" opacity="0.8" />
+
+      <circle cx="270" cy="250" r="4" fill="#C77DFF" opacity="0.8" />
+      <circle cx="270" cy="270" r="4" fill="#C77DFF" opacity="0.8" />
+      <circle cx="310" cy="270" r="4" fill="#C77DFF" opacity="0.8" />
+      <circle cx="310" cy="230" r="4" fill="#C77DFF" opacity="0.8" />
+
+      <circle cx="330" cy="250" r="4" fill="#C77DFF" opacity="0.8" />
+      <circle cx="330" cy="270" r="4" fill="#C77DFF" opacity="0.8" />
+      <circle cx="290" cy="270" r="4" fill="#C77DFF" opacity="0.8" />
+      <circle cx="290" cy="230" r="4" fill="#C77DFF" opacity="0.8" />
+
+      <circle cx="290" cy="370" r="4" fill="#C77DFF" opacity="0.8" />
+      <circle cx="290" cy="350" r="4" fill="#C77DFF" opacity="0.8" />
+      <circle cx="330" cy="350" r="4" fill="#C77DFF" opacity="0.8" />
+      <circle cx="330" cy="390" r="4" fill="#C77DFF" opacity="0.8" />
+
+      <circle cx="310" cy="370" r="4" fill="#C77DFF" opacity="0.8" />
+      <circle cx="310" cy="350" r="4" fill="#C77DFF" opacity="0.8" />
+      <circle cx="270" cy="350" r="4" fill="#C77DFF" opacity="0.8" />
+      <circle cx="270" cy="390" r="4" fill="#C77DFF" opacity="0.8" />
+    </g>
+  </g>
+
+  <!-- Central 3D code bracket element -->
+  <g filter="url(#dropShadow)">
+    <!-- Left bracket with 3D effect -->
+    <g transform="translate(230, 300)">
+      <path d="M-15,-30 C-25,-10 -25,10 -15,30" stroke="#240054" stroke-width="20" stroke-linecap="round" fill="none" />
+      <path d="M-15,-30 C-25,-10 -25,10 -15,30" stroke="url(#glowGradient)" stroke-width="16" stroke-linecap="round" fill="none" filter="url(#neonGlow)" />
+    </g>
+
+    <!-- Right bracket with 3D effect -->
+    <g transform="translate(370, 300)">
+      <path d="M15,-30 C25,-10 25,10 15,30" stroke="#240054" stroke-width="20" stroke-linecap="round" fill="none" />
+      <path d="M15,-30 C25,-10 25,10 15,30" stroke="url(#glowGradient)" stroke-width="16" stroke-linecap="round" fill="none" filter="url(#neonGlow)" />
+    </g>
+
+    <!-- Connecting line with 3D effect -->
+    <line x1="215" y1="300" x2="385" y2="300" stroke="#240054" stroke-width="20" stroke-linecap="round" />
+    <line x1="215" y1="300" x2="385" y2="300" stroke="url(#glowGradient)" stroke-width="16" stroke-linecap="round" filter="url(#neonGlow)" />
+  </g>
+
+  <!-- Download arrow with 3D effect -->
+  <g filter="url(#dropShadow)">
+    <!-- Arrow shaft with 3D effect -->
+    <line x1="300" y1="220" x2="300" y2="320" stroke="#240054" stroke-width="20" stroke-linecap="round" />
+    <line x1="300" y1="220" x2="300" y2="320" stroke="url(#glowGradient)" stroke-width="16" stroke-linecap="round" filter="url(#neonGlow)" />
+
+    <!-- Arrow head with 3D effect -->
+    <polyline points="260,280 300,320 340,280" stroke="#240054" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    <polyline points="260,280 300,320 340,280" stroke="url(#glowGradient)" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" fill="none" filter="url(#neonGlow)" />
+  </g>
+
+  <!-- Premium elements -->
+  <g filter="url(#dropShadow)">
+    <!-- Premium crown at top -->
+    <path d="M270,120 L300,100 L330,120 L340,100 L320,130 L280,130 L260,100 Z" fill="url(#goldGradient)" />
+
+    <!-- Star accents -->
+    <g fill="url(#goldGradient)">
+      <circle cx="200" cy="180" r="8" />
+      <circle cx="400" cy="180" r="8" />
+      <circle cx="170" cy="300" r="6" />
+      <circle cx="430" cy="300" r="6" />
+      <circle cx="200" cy="420" r="8" />
+      <circle cx="400" cy="420" r="8" />
+    </g>
+
+    <!-- Outer orbit ring -->
+    <circle cx="300" cy="300" r="200" fill="none" stroke="url(#goldGradient)" stroke-width="1" stroke-dasharray="5,10" transform="rotate(45, 300, 300)" />
+  </g>
+
+  <!-- Dynamic particles -->
+  <g>
+    <circle cx="220" cy="220" r="3" fill="#E0AAFF" opacity="0.9">
+      <animate attributeName="opacity" values="0.9;0.3;0.9" dur="3s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="380" cy="220" r="3" fill="#E0AAFF" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;0.2;0.7" dur="4s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="220" cy="380" r="3" fill="#E0AAFF" opacity="0.5">
+      <animate attributeName="opacity" values="0.5;0.1;0.5" dur="3.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="380" cy="380" r="3" fill="#E0AAFF" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.4;0.8" dur="2.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="300" cy="210" r="4" fill="#FFD700" opacity="0.6">
+      <animate attributeName="opacity" values="0.6;0.2;0.6" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="300" cy="390" r="4" fill="#FFD700" opacity="0.7">
+      <animate attributeName="opacity" values="0.7;0.3;0.7" dur="3s" repeatCount="indefinite" />
+    </circle>
+  </g>
+
+  <!-- Logo text with glow effect -->
+  <g transform="translate(300, 550)" text-anchor="middle" filter="url(#textGlow)">
+    <text font-family="Arial, sans-serif" font-weight="bold" font-size="60" fill="#FFFFFF">
+      MOD<tspan fill="#E0AAFF">STORE</tspan>
+    </text>
+    <text y="30" font-family="Arial, sans-serif" font-size="18" fill="#CCC" letter-spacing="2">
+      ADVANCED MODS • PREMIUM EXPERIENCE
+    </text>
+  </g>
+</svg>

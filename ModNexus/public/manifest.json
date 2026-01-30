@@ -1,0 +1,21 @@
+{
+  "name": "ModNexus - Premium Mobile Games Hub",
+  "short_name": "ModNexus",
+  "description": "Your ultimate destination for premium mobile games",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#111827",
+  "theme_color": "#00f7ff",
+  "icons": [
+    {
+      "src": "/assets/logo/favicon.svg",
+      "sizes": "48x48",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/assets/logo/modnexus-logo.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    }
+  ]
+}

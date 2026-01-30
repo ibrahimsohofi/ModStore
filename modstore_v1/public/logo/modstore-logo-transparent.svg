@@ -1,0 +1,48 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Main Shield Shape with Gradient -->
+  <path d="M256,40 L64,100 L64,220 C64,320 120,420 256,472 C392,420 448,320 448,220 L448,100 L256,40 Z" fill="url(#shieldGradient)" />
+
+  <!-- Inner Shield Accent -->
+  <path d="M256,72 L96,124 L96,218 C96,304 144,388 256,432 C368,388 416,304 416,218 L416,124 L256,72 Z" fill="url(#innerGradient)" />
+
+  <!-- Mod Symbol -->
+  <path d="M256,140 L180,180 L180,260 L256,300 L332,260 L332,180 L256,140 Z" fill="url(#centerGradient)" />
+
+  <!-- Modification Symbol (Code Brackets) -->
+  <path d="M200,200 L230,220 L200,240 M312,200 L282,220 L312,240" stroke="#7B61FF" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+
+  <!-- Center Connection Line -->
+  <line x1="230" y1="220" x2="282" y2="220" stroke="#7B61FF" stroke-width="14" stroke-linecap="round" />
+
+  <!-- Text: ModStore -->
+  <text x="256" y="370" font-family="Arial, sans-serif" font-size="54" font-weight="bold" text-anchor="middle" fill="#FFFFFF">Mod<tspan fill="#7B61FF">Store</tspan></text>
+
+  <!-- Tagline -->
+  <text x="256" y="405" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#EAEAEA">Premium Apps Unlocked</text>
+
+  <!-- Outer Glow Effect -->
+  <circle cx="256" cy="255" r="180" fill="url(#glow)" fill-opacity="0.2" />
+
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2A2D3A" />
+      <stop offset="100%" stop-color="#1E212B" />
+    </linearGradient>
+
+    <linearGradient id="innerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#363945" />
+      <stop offset="100%" stop-color="#2A2D3A" />
+    </linearGradient>
+
+    <linearGradient id="centerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E212B" />
+      <stop offset="100%" stop-color="#121420" />
+    </linearGradient>
+
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5" fx="0.5" fy="0.5">
+      <stop offset="0%" stop-color="#7B61FF" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#7B61FF" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+</svg>

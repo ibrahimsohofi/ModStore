@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Success - Fortnite Mods Pack</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/fortnite-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        .success-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .success-content {
+            flex: 1;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .success-icon {
+            width: 120px;
+            height: 120px;
+            background-color: var(--success-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            margin: 0 auto 2rem;
+            animation: scale-in 0.5s ease;
+        }
+
+        @keyframes scale-in {
+            0% {
+                transform: scale(0);
+            }
+            70% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .content-box {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            max-width: 800px;
+            margin: 2rem auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+        }
+
+        .download-section {
+            margin: 2rem 0;
+        }
+
+        .progress-bar {
+            background-color: #f1f1f1;
+            height: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 1rem 0 2rem;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            width: 0%;
+            transition: width 3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .download-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-decoration: none;
+            margin: 1rem;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .download-button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .mod-list {
+            text-align: left;
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid #e0e0e0;
+            border-radius: var(--border-radius);
+            padding: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .mod-list h4 {
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .mod-item {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #f5f5f5;
+        }
+
+        .installation-steps {
+            text-align: left;
+            margin: 2rem 0;
+        }
+
+        .installation-steps h3 {
+            color: var(--primary-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .installation-steps ol {
+            padding-left: 1.5rem;
+        }
+
+        .installation-steps li {
+            margin-bottom: 1rem;
+        }
+
+        .more-content {
+            margin-top: 3rem;
+        }
+
+        .more-content h3 {
+            color: var(--primary-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="success-page">
+        <!-- Game Selector Navigation -->
+        <div class="game-selector">
+            <div class="container">
+                <ul class="all-games">
+                    <li><a href="index.html">Minecraft</a></li>
+                    <li><a href="fortnite.html" class="active">Fortnite</a></li>
+                    <li><a href="roblox.html">Roblox</a></li>
+                    <li><a href="gta5.html">GTA 5</a></li>
+                    <li><a href="among-us.html">Among Us</a></li>
+                </ul>
+                <div class="price-options">
+                    <span>Package:</span>
+                    <select id="package-selector" onchange="showPriceModal()">
+                        <option value="basic">Basic (FREE)</option>
+                        <option value="premium">Premium</option>
+                        <option value="ultimate">Ultimate</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Header Section -->
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <img src="images/fortnite-logo.png" alt="Fortnite Logo">
+                    <h1>BATTLE MODS</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="fortnite.html">BACK TO HOME</a></li>
+                        <li><a href="#installation">INSTALLATION</a></li>
+                        <li><a href="#support">SUPPORT</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Success Content -->
+        <div class="success-content">
+            <div class="container">
+                <div class="success-icon">
+                    <i class="fas fa-check"></i>
+                </div>
+                <h1>VICTORY ROYALE!</h1>
+                <p>Your premium Fortnite mods pack is now ready to download.</p>
+
+                <div class="content-box">
+                    <div class="download-section">
+                        <h2>YOUR DOWNLOAD IS READY</h2>
+                        <p>Preparing your download package (30+ mods included):</p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progress-fill">0%</div>
+                        </div>
+                        <a href="#" class="download-button" id="download-btn" style="display: none;">
+                            <i class="fas fa-download"></i> DOWNLOAD MOD PACK (220 MB)
+                        </a>
+                        <p id="preparing-text">Preparing your download... Please wait.</p>
+                    </div>
+
+                    <div class="installation-steps" id="installation">
+                        <h3>INSTALLATION INSTRUCTIONS</h3>
+                        <ol>
+                            <li>Download and extract the mod pack ZIP file</li>
+                            <li>Run the Fortnite Mod Installer application</li>
+                            <li>Select your Fortnite installation directory
+                                <ul>
+                                    <li>Epic Games Launcher: Usually in C:\Program Files\Epic Games\Fortnite</li>
+                                    <li>PlayStation: The installer will automatically detect your installation</li>
+                                    <li>Xbox: The installer will automatically detect your installation</li>
+                                </ul>
+                            </li>
+                            <li>Choose which mods you want to install</li>
+                            <li>Click "Install Mods" and wait for the installation to complete</li>
+                            <li>Launch Fortnite and enjoy your enhanced gaming experience!</li>
+                        </ol>
+                    </div>
+
+                    <div class="mod-list">
+                        <h4>INCLUDED MODS (30+)</h4>
+                        <div class="mod-item">SPIDER-MAN MOD - Web-swinging mechanics, wall-climbing, and Spider-Sense abilities</div>
+                        <div class="mod-item">MARVEL ARMOR PACK - Iron Man, Thor, Captain America, and Black Panther skins</div>
+                        <div class="mod-item">POKÉMON COLLECTION - Pikachu, Charizard, Mewtwo, and other Pokémon character skins</div>
+                        <div class="mod-item">PRO PLAYER PACK - Enhanced building, auto-aim, and movement techniques</div>
+                        <div class="mod-item">WEAPON SKIN PACK - Exclusive weapon skins not available in the Item Shop</div>
+                        <div class="mod-item">EMOTE EXPANSION - Custom emotes that aren't available in the game</div>
+                        <div class="mod-item">BUILD TEMPLATES - Pre-built structures for instant deployment</div>
+                        <div class="mod-item">UNLIMITED V-BUCKS - Offline V-Bucks for skin preview only</div>
+                        <div class="mod-item">DANCE PACK PREMIUM - 50+ exclusive dance emotes</div>
+                        <div class="mod-item">VEHICLE MODS - Enhanced vehicles with special abilities</div>
+                        <div class="mod-item">MYTHIC WEAPONS PACK - Access to all mythic weapons in Creative mode</div>
+                        <div class="mod-item">STORM CONTROLLER - Modify storm behavior in Creative</div>
+                        <div class="mod-item">... and many more!</div>
+                    </div>
+                </div>
+
+                <div class="more-content">
+                    <h3>WANT MORE FORTNITE CONTENT?</h3>
+                    <p>Visit our YouTube channel for tutorials and updates on new mods!</p>
+                    <div class="social-links" style="margin: 1rem 0;">
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <a href="fortnite.html" class="download-button secondary-btn">
+                        RETURN TO HOMEPAGE
+                    </a>
+                </div>
+
+                <div id="support" style="margin-top: 3rem;">
+                    <h3>NEED HELP?</h3>
+                    <p>If you encounter any issues with installation or have questions, contact our support team:</p>
+                    <p><i class="fas fa-envelope"></i> support@fortnitemodshub.com</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <img src="images/fortnite-logo.png" alt="Fortnite Logo">
+                        <p>PREMIUM FORTNITE MODS</p>
+                    </div>
+                    <div class="footer-links">
+                        <h4>QUICK LINKS</h4>
+                        <ul>
+                            <li><a href="fortnite.html">Home</a></li>
+                            <li><a href="#installation">Installation</a></li>
+                            <li><a href="#support">Support</a></li>
+                            <li><a href="privacy.html">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-contact">
+                        <h4>SUPPORT</h4>
+                        <p><i class="fas fa-envelope"></i> support@fortnitemodshub.com</p>
+                        <p><i class="fas fa-clock"></i> Response within 24 hours</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 Fortnite Mods Hub. Not affiliated with Epic Games.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Simulate loading progress
+            const progressFill = document.getElementById('progress-fill');
+            const downloadBtn = document.getElementById('download-btn');
+            const preparingText = document.getElementById('preparing-text');
+
+            let width = 0;
+            const interval = setInterval(function() {
+                if (width >= 100) {
+                    clearInterval(interval);
+                    downloadBtn.style.display = 'inline-block';
+                    preparingText.style.display = 'none';
+                } else {
+                    width++;
+                    progressFill.style.width = width + '%';
+                    progressFill.textContent = width + '%';
+                }
+            }, 30);
+
+            // Track the download success page view
+            if (typeof trackEvent === 'function') {
+                trackEvent('conversion', 'success_page_view', 'fortnite');
+            }
+
+            // Set up download button (in a real implementation, this would point to your actual mod files)
+            downloadBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                // Track the download button click
+                if (typeof trackEvent === 'function') {
+                    trackEvent('conversion', 'download_button_click', 'fortnite');
+                }
+
+                // In a real implementation, this would download your actual mod files
+                // For the demo, show an alert
+                alert('In a real implementation, this would download your actual mod files. For this template, we\'re just showing the structure.');
+            });
+
+            // Load the package selector
+            const packageSelector = document.getElementById('package-selector');
+            if (packageSelector) {
+                // Check if we have a saved preference
+                const savedPackage = localStorage.getItem('selected_package');
+                if (savedPackage) {
+                    packageSelector.value = savedPackage;
+                }
+            }
+        });
+
+        // Function to show the price modal (just redirect to main page)
+        function showPriceModal() {
+            window.location.href = 'fortnite.html';
+        }
+    </script>
+
+    <!-- JavaScript -->
+    <script src="js/analytics.js"></script>
+</body>
+</html>

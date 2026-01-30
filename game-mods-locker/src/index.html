@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Minecraft Mods 2025 - Unlock Latest Mods</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/minecraft-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Minecraft&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Download premium Minecraft mods for free. Get access to exclusive texture packs, game enhancements, and powerful gameplay mods.">
+    <meta name="keywords" content="Minecraft mods, free Minecraft mods, Minecraft texture packs, Minecraft cheats">
+    <!-- Google Analytics Integration -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+
+        // Check if user has accepted analytics
+        if (localStorage.getItem('analytics_accepted') === 'true') {
+            gtag('js', new Date());
+            gtag('config', 'G-XXXXXXXXXX');
+        }
+    </script>
+</head>
+<body>
+    <!-- Game Selector Navigation -->
+    <div class="game-selector">
+        <div class="container">
+            <ul class="all-games">
+                <li><a href="index.html" class="active">Minecraft</a></li>
+                <li><a href="fortnite.html">Fortnite</a></li>
+                <li><a href="roblox.html">Roblox</a></li>
+                <li><a href="gta5.html">GTA 5</a></li>
+                <li><a href="among-us.html">Among Us</a></li>
+            </ul>
+            <div class="price-options">
+                <span>Package:</span>
+                <select id="package-selector" onchange="showPriceModal()">
+                    <option value="basic">Basic (FREE)</option>
+                    <option value="premium">Premium</option>
+                    <option value="ultimate">Ultimate</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/minecraft-logo.png" alt="Minecraft Logo">
+                <h1>Premium Mods Pack</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#featured-mods">Featured Mods</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Unlock Premium Minecraft Mods</h1>
+                <h2>Enhanced Gameplay, Epic Textures & Exclusive Features</h2>
+                <p>Get instant access to our collection of 50+ premium Minecraft mods, updated for the latest version.</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <i class="fas fa-download"></i>
+                        <span id="download-count">14,587</span>
+                        <p>Downloads</p>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-star"></i>
+                        <span>4.8/5</span>
+                        <p>Rating</p>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-sync-alt"></i>
+                        <span>Weekly</span>
+                        <p>Updates</p>
+                    </div>
+                </div>
+                <button id="main-download-btn" class="download-btn pulse">DOWNLOAD NOW</button>
+            </div>
+            <div class="hero-image">
+                <img src="images/minecraft-hero.png" alt="Minecraft mods showcase">
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Mods Section -->
+    <section id="featured-mods" class="featured-mods">
+        <div class="container">
+            <h2 class="section-title">Featured Mods Included</h2>
+            <div class="mods-grid">
+                <div class="mod-card">
+                    <div class="mod-image">
+                        <img src="images/mod1.jpg" alt="Shader Pack Pro">
+                    </div>
+                    <div class="mod-content">
+                        <h3>Shader Pack Pro</h3>
+                        <p>Ultra-realistic lighting effects, water reflections, and shadow enhancements.</p>
+                        <div class="mod-meta">
+                            <span><i class="fas fa-download"></i> 5.2k</span>
+                            <span><i class="fas fa-star"></i> 4.9</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mod-card">
+                    <div class="mod-image">
+                        <img src="images/mod2.jpg" alt="Building Expansion">
+                    </div>
+                    <div class="mod-content">
+                        <h3>Building Expansion</h3>
+                        <p>500+ new building blocks and architectural elements for creative builders.</p>
+                        <div class="mod-meta">
+                            <span><i class="fas fa-download"></i> 4.7k</span>
+                            <span><i class="fas fa-star"></i> 4.8</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mod-card">
+                    <div class="mod-image">
+                        <img src="images/mod3.jpg" alt="Adventure Plus">
+                    </div>
+                    <div class="mod-content">
+                        <h3>Adventure Plus</h3>
+                        <p>New dungeons, bosses, weapons, and quests for an enhanced adventure experience.</p>
+                        <div class="mod-meta">
+                            <span><i class="fas fa-download"></i> 6.1k</span>
+                            <span><i class="fas fa-star"></i> 4.7</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mod-card">
+                    <div class="mod-image">
+                        <img src="images/mod4.jpg" alt="Survival Enhancement">
+                    </div>
+                    <div class="mod-content">
+                        <h3>Survival Enhancement</h3>
+                        <p>New survival mechanics, crafting recipes, and challenges for hardcore players.</p>
+                        <div class="mod-meta">
+                            <span><i class="fas fa-download"></i> 3.9k</span>
+                            <span><i class="fas fa-star"></i> 4.6</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="view-more">
+                <p>+ 46 more premium mods included in the pack</p>
+                <button class="download-btn secondary-btn">UNLOCK ALL MODS</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-mouse-pointer"></i>
+                    </div>
+                    <h3>Step 1</h3>
+                    <p>Click the download button on this page</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>Step 2</h3>
+                    <p>Complete a quick offer to unlock (takes less than 2 minutes)</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-download"></i>
+                    </div>
+                    <h3>Step 3</h3>
+                    <p>Download the mod pack and follow installation instructions</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h3>Step 4</h3>
+                    <p>Enjoy your enhanced Minecraft experience!</p>
+                </div>
+            </div>
+            <div class="compatibility">
+                <h3>Compatible with:</h3>
+                <div class="compatibility-icons">
+                    <div class="compat-icon">
+                        <img src="images/minecraft-icon.png" alt="Minecraft">
+                        <span>Minecraft Java</span>
+                    </div>
+                    <div class="compat-icon">
+                        <img src="images/windows-icon.png" alt="Windows">
+                        <span>Windows</span>
+                    </div>
+                    <div class="compat-icon">
+                        <img src="images/mac-icon.png" alt="Mac">
+                        <span>Mac OS</span>
+                    </div>
+                    <div class="compat-icon">
+                        <img src="images/linux-icon.png" alt="Linux">
+                        <span>Linux</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Players Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="testimonial-header">
+                        <img src="images/user1.jpg" alt="User Avatar">
+                        <div>
+                            <h4>MinecraftPro2023</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"These mods completely transformed my Minecraft experience. The shader pack alone is worth it. Easy download and installation too!"</p>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-header">
+                        <img src="images/user2.jpg" alt="User Avatar">
+                        <div>
+                            <h4>BuildMaster99</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"As a builder, the new blocks and textures are amazing. My builds look so much better now. Worth completing the quick offer to unlock."</p>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-header">
+                        <img src="images/user3.jpg" alt="User Avatar">
+                        <div>
+                            <h4>SurvivalKing</h4>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p>"The survival enhancements make the game so much more challenging and fun. New crafting recipes are awesome. Highly recommended!"</p>
+                </div>
+            </div>
+            <div class="cta-box">
+                <h3>Ready to Transform Your Minecraft Experience?</h3>
+                <p>Join 14,500+ players who have already enhanced their gameplay</p>
+                <button id="bottom-download-btn" class="download-btn pulse">DOWNLOAD MOD PACK NOW</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3><i class="fas fa-question-circle"></i> Are these mods safe to use?</h3>
+                    <p>Yes, all mods in our pack are virus-scanned and thoroughly tested. They don't contain any malware or harmful code.</p>
+                </div>
+                <div class="faq-item">
+                    <h3><i class="fas fa-question-circle"></i> Which Minecraft versions are supported?</h3>
+                    <p>Our mod pack supports Minecraft Java Edition versions 1.16.5 through 1.20.1. We update regularly for compatibility.</p>
+                </div>
+                <div class="faq-item">
+                    <h3><i class="fas fa-question-circle"></i> Will this work with multiplayer?</h3>
+                    <p>Most mods work in multiplayer when installed on both client and server. Some visual mods work client-side only.</p>
+                </div>
+                <div class="faq-item">
+                    <h3><i class="fas fa-question-circle"></i> How do I install these mods?</h3>
+                    <p>Simple installation instructions are included in the download. Typically requires Forge or Fabric mod loader.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/minecraft-logo-small.png" alt="Minecraft Logo">
+                    <p>Premium Minecraft Mods</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#featured-mods">Featured Mods</a></li>
+                        <li><a href="#how-it-works">How It Works</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Support</h4>
+                    <p><i class="fas fa-envelope"></i> support@minecraftmodshub.com</p>
+                    <p><i class="fas fa-clock"></i> Response within 24 hours</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-discord"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Minecraft Mods Hub. Not affiliated with Mojang or Microsoft.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Package Options Modal -->
+    <div id="price-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <h2>Choose Your Package</h2>
+            <p>Select the package that best fits your gaming needs</p>
+
+            <div class="price-options-grid">
+                <div class="price-option" onclick="selectOption('basic')" id="basic-option">
+                    <div class="price-name">Basic</div>
+                    <div class="price-cost">FREE</div>
+                    <ul class="price-features">
+                        <li>10 Essential Mods</li>
+                        <li>Basic Shaders</li>
+                        <li>Standard Support</li>
+                    </ul>
+                </div>
+
+                <div class="price-option" onclick="selectOption('premium')" id="premium-option">
+                    <div class="price-name">Premium</div>
+                    <div class="price-cost">$4.99</div>
+                    <ul class="price-features">
+                        <li>50+ Premium Mods</li>
+                        <li>Advanced Shaders</li>
+                        <li>Priority Support</li>
+                        <li>Monthly Updates</li>
+                    </ul>
+                </div>
+
+                <div class="price-option" onclick="selectOption('ultimate')" id="ultimate-option">
+                    <div class="price-name">Ultimate</div>
+                    <div class="price-cost">$9.99</div>
+                    <ul class="price-features">
+                        <li>100+ Ultimate Mods</li>
+                        <li>Exclusive Shaders</li>
+                        <li>24/7 VIP Support</li>
+                        <li>Weekly Updates</li>
+                        <li>Custom Mod Requests</li>
+                    </ul>
+                </div>
+            </div>
+
+            <button class="continue-btn" onclick="continueWithOption()">Continue</button>
+        </div>
+    </div>
+
+    <!-- Analytics Consent Notice -->
+    <div id="analytics-notice" class="analytics-notice" style="display:none;">
+        We use cookies and analytics to improve your experience.
+        <a href="privacy.html">Privacy Policy</a>
+        <button class="accept-analytics" onclick="acceptAnalytics()">Accept</button>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/analytics.js"></script>
+    <script src="js/pricing.js"></script>
+</body>
+</html>

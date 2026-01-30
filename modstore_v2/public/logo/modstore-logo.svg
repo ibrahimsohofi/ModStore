@@ -1,0 +1,55 @@
+<svg width="240" height="240" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background rounded square with gradient -->
+  <rect width="240" height="240" rx="50" fill="url(#paint0_linear)" />
+
+  <!-- App icon inner content -->
+  <g filter="url(#shadow)">
+    <path d="M120 60C87.9086 60 62 85.9086 62 118C62 150.091 87.9086 176 120 176C152.091 176 178 150.091 178 118C178 85.9086 152.091 60 120 60Z" fill="#1E1E2E" />
+    <path d="M120 68C92.3858 68 70 90.3858 70 118C70 145.614 92.3858 168 120 168C147.614 168 170 145.614 170 118C170 90.3858 147.614 68 120 68Z" fill="url(#paint1_linear)" />
+  </g>
+
+  <!-- Download arrow -->
+  <path d="M120 88V130" stroke="white" stroke-width="12" stroke-linecap="round" />
+  <path d="M95 115L120 140L145 115" stroke="white" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- Stars for premium/mod indicators -->
+  <path d="M85 85L90 90M85 90L90 85" stroke="#FFD700" stroke-width="5" stroke-linecap="round" />
+  <path d="M150 85L155 90M150 90L155 85" stroke="#FFD700" stroke-width="5" stroke-linecap="round" />
+
+  <!-- Sparkle effect at bottom -->
+  <circle cx="120" cy="148" r="5" fill="#FFFFFF" />
+  <circle cx="105" cy="146" r="3" fill="#FFD700" />
+  <circle cx="135" cy="146" r="3" fill="#FFD700" />
+
+  <!-- Premium crown at top -->
+  <path d="M110 40L120 50L130 40L135 50L125 57H115L105 50L110 40Z" fill="url(#paint2_linear)" />
+
+  <!-- Filters and gradients -->
+  <defs>
+    <filter id="shadow" x="58" y="56" width="124" height="124" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+      <feOffset dy="4" />
+      <feGaussianBlur stdDeviation="2" />
+      <feComposite in2="hardAlpha" operator="out" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+    </filter>
+
+    <linearGradient id="paint0_linear" x1="0" y1="0" x2="240" y2="240" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7B61FF" />
+      <stop offset="1" stop-color="#4F46E5" />
+    </linearGradient>
+
+    <linearGradient id="paint1_linear" x1="70" y1="68" x2="170" y2="168" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4F46E5" />
+      <stop offset="1" stop-color="#7B61FF" />
+    </linearGradient>
+
+    <linearGradient id="paint2_linear" x1="105" y1="40" x2="135" y2="57" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFD700" />
+      <stop offset="1" stop-color="#FFA500" />
+    </linearGradient>
+  </defs>
+</svg>

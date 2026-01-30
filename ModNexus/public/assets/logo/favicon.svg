@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Glow effect filter -->
+  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur stdDeviation="1.5" result="blur" />
+    <feFlood flood-color="#00f7ff" flood-opacity="0.8" result="glowColor" />
+    <feComposite in="glowColor" in2="blur" operator="in" result="softGlow" />
+    <feMerge>
+      <feMergeNode in="softGlow" />
+      <feMergeNode in="SourceGraphic" />
+    </feMerge>
+  </filter>
+
+  <!-- Dark background -->
+  <rect width="48" height="48" rx="8" fill="#111827" />
+
+  <!-- Controller shape with glow -->
+  <g filter="url(#glow)" transform="translate(6, 6) scale(0.75)">
+    <path d="M32 15C29.8 15 28 16.8 28 19V25H22C19.8 25 18 26.8 18 29V31C18 33.2 19.8 35 22 35H28V41C28 43.2 29.8 45 32 45H34C36.2 45 38 43.2 38 41V35H44C46.2 35 48 33.2 48 31V29C48 26.8 46.2 25 44 25H38V19C38 16.8 36.2 15 34 15H32Z" stroke="#00f7ff" stroke-width="2.5"/>
+    <circle cx="50" cy="20" r="4" stroke="#00f7ff" stroke-width="2.5"/>
+    <circle cx="58" cy="28" r="4" stroke="#00f7ff" stroke-width="2.5"/>
+  </g>
+
+  <!-- Letter M in the center with glow -->
+  <text x="19" y="30" font-family="Arial, sans-serif" font-weight="bold" font-size="15" fill="#00f7ff" filter="url(#glow)">M</text>
+</svg>

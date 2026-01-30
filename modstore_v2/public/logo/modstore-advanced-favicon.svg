@@ -1,0 +1,35 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Backdrop with gradient and glowing effect -->
+  <defs>
+    <linearGradient id="backgroundGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#240054" />
+      <stop offset="50%" stop-color="#3D0F77" />
+      <stop offset="100%" stop-color="#5A189A" />
+    </linearGradient>
+
+    <linearGradient id="modGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C77DFF" />
+      <stop offset="100%" stop-color="#E0AAFF" />
+    </linearGradient>
+  </defs>
+
+  <!-- App icon style rounded square background -->
+  <rect width="64" height="64" rx="14" fill="url(#backgroundGradient)" />
+
+  <!-- Central MOD element with code brackets (simplified) -->
+  <path d="M32,18 L47,27 L47,45 L32,54 L17,45 L17,27 Z" fill="#240054" opacity="0.85" />
+  <path d="M32,22 L44,29 L44,42 L32,49 L20,42 L20,29 Z" fill="#3D0F77" />
+
+  <!-- Code bracket left -->
+  <path d="M24,32 L28,36 L24,40" stroke="#C77DFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+
+  <!-- Code bracket right -->
+  <path d="M40,32 L36,36 L40,40" stroke="#C77DFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+
+  <!-- Connecting line -->
+  <line x1="28" y1="36" x2="36" y2="36" stroke="#E0AAFF" stroke-width="3" stroke-linecap="round" />
+
+  <!-- Down Arrow for downloads -->
+  <path d="M32,26 V32" stroke="url(#modGradient)" stroke-width="3" stroke-linecap="round" />
+  <path d="M28,28 L32,32 L36,28" stroke="url(#modGradient)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+</svg>

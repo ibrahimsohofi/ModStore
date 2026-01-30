@@ -1,0 +1,112 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Backdrop with gradient and glowing effect -->
+  <defs>
+    <linearGradient id="backgroundGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#240054" />
+      <stop offset="50%" stop-color="#3D0F77" />
+      <stop offset="100%" stop-color="#5A189A" />
+    </linearGradient>
+
+    <linearGradient id="innerCircleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6C21BE" />
+      <stop offset="100%" stop-color="#9D4EDD" />
+    </linearGradient>
+
+    <linearGradient id="modGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C77DFF" />
+      <stop offset="100%" stop-color="#E0AAFF" />
+    </linearGradient>
+
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+      <feComposite in="blur" in2="SourceGraphic" operator="over" />
+    </filter>
+
+    <filter id="innerShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feOffset dx="0" dy="4" />
+      <feGaussianBlur stdDeviation="4" result="blurOut" />
+      <feComposite in="SourceGraphic" in2="blurOut" operator="over" />
+    </filter>
+
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#240054" flood-opacity="0.5" />
+    </filter>
+  </defs>
+
+  <!-- Main circular background -->
+  <circle cx="256" cy="256" r="230" fill="url(#backgroundGradient)" filter="url(#glow)" />
+
+  <!-- Inner circle with gaming pattern -->
+  <circle cx="256" cy="256" r="190" fill="url(#innerCircleGradient)" filter="url(#innerShadow)" />
+
+  <!-- Hex grid pattern overlay - gaming aesthetic -->
+  <g opacity="0.15">
+    <path d="M136,186 L166,166 L196,186 L196,226 L166,246 L136,226 Z" fill="#ffffff" />
+    <path d="M196,186 L226,166 L256,186 L256,226 L226,246 L196,226 Z" fill="#ffffff" />
+    <path d="M256,186 L286,166 L316,186 L316,226 L286,246 L256,226 Z" fill="#ffffff" />
+    <path d="M316,186 L346,166 L376,186 L376,226 L346,246 L316,226 Z" fill="#ffffff" />
+    <path d="M166,126 L196,106 L226,126 L226,166 L196,186 L166,166 Z" fill="#ffffff" />
+    <path d="M226,126 L256,106 L286,126 L286,166 L256,186 L226,166 Z" fill="#ffffff" />
+    <path d="M286,126 L316,106 L346,126 L346,166 L316,186 L286,166 Z" fill="#ffffff" />
+    <path d="M166,246 L196,226 L226,246 L226,286 L196,306 L166,286 Z" fill="#ffffff" />
+    <path d="M226,246 L256,226 L286,246 L286,286 L256,306 L226,286 Z" fill="#ffffff" />
+    <path d="M286,246 L316,226 L346,246 L346,286 L316,306 L286,286 Z" fill="#ffffff" />
+    <path d="M196,306 L226,286 L256,306 L256,346 L226,366 L196,346 Z" fill="#ffffff" />
+    <path d="M256,306 L286,286 L316,306 L316,346 L286,366 L256,346 Z" fill="#ffffff" />
+  </g>
+
+  <!-- Digital circuit lines representing mod/code -->
+  <g stroke="#C77DFF" stroke-width="2.5" opacity="0.7">
+    <path d="M120,256 H160 M160,256 V290 H200 M200,290 V320" fill="none" />
+    <path d="M390,256 H350 M350,256 V290 H310 M310,290 V320" fill="none" />
+    <path d="M160,220 H200 M200,220 V190 H240" fill="none" />
+    <path d="M350,220 H310 M310,220 V190 H270" fill="none" />
+  </g>
+
+  <!-- Central MOD element with code brackets -->
+  <g filter="url(#softShadow)">
+    <!-- Hexagon base with glowing effect -->
+    <path d="M256,146 L346,196 L346,296 L256,346 L166,296 L166,196 Z" fill="#240054" opacity="0.85" />
+    <path d="M256,166 L326,206 L326,286 L256,326 L186,286 L186,206 Z" fill="#3D0F77" />
+
+    <!-- Code bracket left -->
+    <path d="M206,226 L226,246 L206,266" stroke="#C77DFF" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+
+    <!-- Code bracket right -->
+    <path d="M306,226 L286,246 L306,266" stroke="#C77DFF" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+
+    <!-- Connecting line -->
+    <line x1="226" y1="246" x2="286" y2="246" stroke="#E0AAFF" stroke-width="12" stroke-linecap="round" />
+
+    <!-- Down Arrow for downloads -->
+    <path d="M256,196 V236" stroke="url(#modGradient)" stroke-width="14" stroke-linecap="round" />
+    <path d="M236,216 L256,236 L276,216" stroke="url(#modGradient)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- Premium indicator stars -->
+  <g fill="#FFD700">
+    <circle cx="156" cy="176" r="5" />
+    <circle cx="356" cy="176" r="5" />
+    <circle cx="176" cy="336" r="5" />
+    <circle cx="336" cy="336" r="5" />
+  </g>
+
+  <!-- Glowing particles around for dynamic effect -->
+  <g fill="#E0AAFF">
+    <circle cx="126" cy="256" r="3" opacity="0.8" />
+    <circle cx="136" cy="236" r="2" opacity="0.6" />
+    <circle cx="386" cy="256" r="3" opacity="0.8" />
+    <circle cx="376" cy="236" r="2" opacity="0.6" />
+    <circle cx="256" cy="126" r="3" opacity="0.8" />
+    <circle cx="226" cy="136" r="2" opacity="0.6" />
+    <circle cx="286" cy="136" r="2" opacity="0.6" />
+    <circle cx="256" cy="386" r="3" opacity="0.8" />
+    <circle cx="236" cy="366" r="2" opacity="0.6" />
+    <circle cx="276" cy="366" r="2" opacity="0.6" />
+  </g>
+
+  <!-- ModStore Text -->
+  <g filter="url(#softShadow)">
+    <text x="256" y="410" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#FFFFFF" text-anchor="middle">MOD<tspan fill="#C77DFF">STORE</tspan></text>
+  </g>
+</svg>
